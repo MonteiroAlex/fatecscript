@@ -8,18 +8,21 @@ background-color:#A3FFA3;
 {
     background-color: #c9302c;
     text-align: center;
+    height: 400px;
 }
 
 .galeria
 {
     background-color: #269abc;
     text-align: center;
+    height: 400px;
 }
 
 .agenda
 {
      background-color: #ffff00;
     text-align: center;
+    height: 400px;
 }
 
 .endereco {
@@ -29,4 +32,38 @@ background-color:#A3FFA3;
 
 
 }
+#carousel-414800{
+    height: 400PX;
+}
 
+#foto1{
+
+    height: 400px;
+    width: 1200px;
+}
+
+#foto2{
+
+    height: 400px;
+    width: 1200px;
+}
+#foto3{
+
+    height: 400px;
+    width: 1200px;
+}
+#foto4{
+
+    height: 200px;
+    width: 250px;
+}
+#foto5{
+
+    height: 200px;
+    width: 250px;
+}
+#foto6{
+
+    height: 200px;
+    width: 250px;
+}
