@@ -3,7 +3,10 @@ body
 background-color:#A3FFA3;
 }
 
+.titulo{
+    background-color: #2a6496;
 
+}
 .atividades
 {
     background-color: #c9302c;
@@ -28,9 +31,10 @@ background-color:#A3FFA3;
 .endereco {
     text-align: center;
 }
-.titulo{
+#titulo{
 
-
+    font-size: 80px;
+    color:#E65CE6;
 }
 #carousel-414800{
     height: 400PX;
