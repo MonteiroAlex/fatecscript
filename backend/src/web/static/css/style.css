@@ -4,7 +4,29 @@ background-color:#A3FFA3;
 }
 
 
-#coluna1{
-   color:#c9302c;
+.atividades
+{
+    background-color: #c9302c;
+    text-align: center;
+}
+
+.galeria
+{
+    background-color: #269abc;
+    text-align: center;
+}
+
+.agenda
+{
+     background-color: #ffff00;
+    text-align: center;
+}
+
+.endereco {
+    text-align: center;
+}
+.titulo{
+
+
 }
 
