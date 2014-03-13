@@ -30,20 +30,23 @@
 </head>
 <body>
 <div class="container">
+    {% macro selecionar_caminho(aba_selecionada='')%}
+
+
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default navbar-inverse" role="navigation">
 				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">ARCO-IRIS</a>
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/home/hist">ARCO-IRIS</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">PAGINA INICIAL</a>
+						<li {{'class=active' if aba_selecionada=='HOME'}}>
+							<a href="/home/index">PAGINA INICIAL</a>
 						</li>
-						<li>
-							<a href="#">ÁREA DOS PAIS</a>
+						<li {{'class=active' if aba_selecionada=='PAIS'}}>
+							<a href="/pais/form">ÁREA DOS PAIS</a>
 						</li>
                         <li>
 							<a href="#">CONTATO</a>
@@ -72,15 +75,27 @@
 								</li>
 							</ul>
 						</li>
+
                         <form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
 							<input type="text" class="form-control">
 						</div> <button type="submit" class="btn btn-default">BUSCA</button>
 					</form>
-					</ul>
-				</div>
-			</nav>
+                    </ul>
+					</div>
+            </nav>
+            </div>
 
+
+
+{% endmacro %}
+{% block caminho %}
+    {{selecionar_caminho()}}
+{% endblock %}
+{% block conteudo %}
+
+
+            <div class="row clearfix">
 				<div class="col-md-12 column">
                     <div class="titulo">
                         <h1 class="text-center text-primary" id="titulo">
@@ -88,6 +103,8 @@
 					</h1>
                     </div>
 				</div>
+            </div>
+
 
             <div class="row clearfix">
 				<div class="col-md-12 column">
@@ -189,11 +206,13 @@
 								</div>
 							</div>
 						</div>
+                {% endblock %}
 					</div> <address class="endereco"> <strong>ESCOLA ARCO-IRIS.</strong><br> JOSÉ LONGO, CENTRO<br> SÃO JOSÉ DOS CAMPOS, SP<br> <abbr title="Phone">Fone:</abbr> (12) 555-456789</address>
 				</div>
 			</div>
 		</div>
 	</div>
+
 </div>
 </body>
 </html>
