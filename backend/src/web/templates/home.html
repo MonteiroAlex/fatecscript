@@ -30,22 +30,24 @@
 </head>
 <body>
 <div class="container">
-    {% macro selecionar_caminho(aba_selecionada='')%}
+    {% macro selecionar_barra (aba_selecionada='HOME') %}
+    <div class="row clearfix">
 
-
-	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default navbar-inverse" role="navigation">
 				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/home/hist">ARCO-IRIS</a>
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
+                        <li {{'class=active' if aba_selecionada=='HIST'}}>
+							<a href="/home/hist">ARCO-IRIS</a>
+						</li>
 						<li {{'class=active' if aba_selecionada=='HOME'}}>
 							<a href="/home/index">PAGINA INICIAL</a>
 						</li>
-						<li {{'class=active' if aba_selecionada=='PAIS'}}>
+						<li {{'class=active' if aba_selecionada == 'PAIS'}}>
 							<a href="/pais/form">ÁREA DOS PAIS</a>
 						</li>
                         <li>
@@ -84,17 +86,16 @@
                     </ul>
 					</div>
             </nav>
-            </div>
+        </div>
 
 
 
 {% endmacro %}
-{% block caminho %}
-    {{selecionar_caminho()}}
+{% block barra %}
+        {{ selecionar_barra() }}
 {% endblock %}
+
 {% block conteudo %}
-
-
             <div class="row clearfix">
 				<div class="col-md-12 column">
                     <div class="titulo">
