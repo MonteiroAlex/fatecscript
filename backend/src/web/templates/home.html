@@ -85,7 +85,7 @@
 					</form>
                          <ul class="nav navbar-nav navbaright" style="padding: 8px 8px 0 0 ">
                         {% if _usuario_logado %}
-                            <a href="{{ _logout_url }}" class="btn btn-success"> Sair </a>
+                            <a href="{{ _logout_url }}" class="btn btn-danger">({{_usuario_logado.nome}}) Sair </a>
                         {% else %}
                             <a href="{{ _login_url }}" class="btn btn-success"> Login Com Google </a>
                         {% endif %}
