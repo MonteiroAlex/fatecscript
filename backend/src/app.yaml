@@ -37,6 +37,3 @@ handlers:
 - url: /.*
   script: convention.app
 
-- url: /curso.*
-  script: convention.app
-  login: admin
