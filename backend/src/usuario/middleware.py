@@ -16,7 +16,7 @@ def execute(next_process, handler, dependencies, **kwargs):
                                    email=usuario_google.email(),
                                    google_id=google_id)
             usuario_logado.put()
-            logout_url=users.create_logout_url('/')
+        logout_url=users.create_logout_url('/')
         dependencies['_usuario_logado']=usuario_logado
         dependencies['_logout_url']=logout_url
     else:
