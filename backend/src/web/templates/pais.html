@@ -8,6 +8,18 @@
               </div>
 		</div>
         <body>
+
             <h1>AREA DOS PAIS</h1>
+            <form action="{{ salvar_url }}" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control"
+                        placeholder="Nome do Curso" name="nome"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </span>
+                </div>
+            </form>
         </body>
 {% endblock %}
