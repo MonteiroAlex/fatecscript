@@ -12,9 +12,7 @@ def execute(next_process, handler, dependencies, **kwargs):
         query = Usuario.query_by_google(google_id)
         usuario_logado=query.get()
         if not usuario_logado:
-            usuario_logado = Usuario(nome=usuario_google.nickname(),
-                                   email=usuario_google.email(),
-                                   google_id=google_id)
+            usuario_logado = Usuario(nome=usuario_google.nickname(),email=usuario_google.email(),google_id=google_id)
             usuario_logado.put()
         logout_url=users.create_logout_url('/')
         dependencies['_usuario_logado']=usuario_logado

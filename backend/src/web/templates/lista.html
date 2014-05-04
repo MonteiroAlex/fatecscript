@@ -8,6 +8,49 @@
               </div>
 		</div>
         <body>
-            <h1>LISTA DE MATERIAIS 1º SEMESTRE</h1>
+            <h1 class="text-center text-primary">  LISTA DE MATERIAIS 1º SEMESTRE</h1>
+
+            {% for material in materiais %}
+
+            <tr>
+                <label>Nome do material: {{ materiais.nome }}</label>
+                <label>Descricao : {{ materiais.descricao }} </label>
+                <label>Quantidade: {{ materiais.quantidade }} </label>
+            </tr>
+            {% endfor %}
+
+            <br> </br><br> </br><br> </br>
         </body>
+
+        <div class="container">
+        <div class="col-md-7 column center-column new-user-column panel panel-default">
+            <h3 class="text-primary">
+				Cadastrar material
+			</h3>
+			<form role="form" id="form_material">
+                <div class="view hide">
+                    <div class="alert alert-dismissable alert-danger">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                        <label id="msg_error"></label>
+                    </div>
+                </div>
+
+				<div class="form-group">
+					 <label for="nome">Nome do material:</label><input type="text" class="form-control required" id="nome" name="nome" />
+				</div>
+				<div class="form-group">
+					 <label for="descricao">Descrição:</label><input type="text" class="form-control required" id="descricao" name="descricao" />
+				</div>
+                <div class="form-group">
+					 <label for="quantidade">Quantidade:</label><input type="text" class="form-control required" id="quantidade" name="quantidade" />
+				</div>
+
+                <button type="button" class="btn btn-primary" onclick="salvar_material()">Salvar</button>
+                <br /><br />
+			</form>
+
+
+    </div>
+    </div>
+
 {% endblock %}
