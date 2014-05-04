@@ -14,11 +14,7 @@ class Material(ndb.Model):
         return cls.query().order(cls.nome)
 
 
-class Usuario(ndb.Model):
 
-    nome = ndb.StringProperty()
-    email = ndb.StringProperty()
-    google_id = ndb.StringProperty()
 
 
 

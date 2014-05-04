@@ -7,20 +7,26 @@
 				    </h1>
               </div>
 		</div>
-        <body>
-            <h1 class="text-center text-primary">  LISTA DE MATERIAIS 1º SEMESTRE</h1>
-
-            {% for material in materiais %}
-
-            <tr>
-                <label>Nome do material: {{ materiais.nome }}</label>
-                <label>Descricao : {{ materiais.descricao }} </label>
-                <label>Quantidade: {{ materiais.quantidade }} </label>
-            </tr>
-            {% endfor %}
-
-            <br> </br><br> </br><br> </br>
-        </body>
+        <table class="ui large table segment">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome do material</th>
+                        <th>Descrição</th>
+                        <th>Quantidade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="Material in materiais | orderBy: materiais.nome">
+                        <td>{$index + 1}</td>
+                        <td>{materiais.nome}</td>
+                        <td>{materiais.descricao}</td>
+                        <td>{materiais.quantidade}</td>
+                        <td ng-click="removeMaterial(materiais, $index)"><i class="remove circle icon"></i></td>
+                    </tr>
+                </tbody>
+            </table>
 
         <div class="container">
         <div class="col-md-7 column center-column new-user-column panel panel-default">
