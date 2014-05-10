@@ -18,7 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="Material in materiais | orderBy: materiais.nome">
+                    <tr ng-repeat="get_all_material in materiais | orderBy: materiais.nome">
                         <td>{$index + 1}</td>
                         <td>{materiais.nome}</td>
                         <td>{materiais.descricao}</td>
@@ -54,7 +54,17 @@
                 <button type="button" class="btn btn-primary" onclick="salvar_material()">Salvar</button>
                 <br /><br />
 			</form>
-
+            <br /><br /><br /><br /><br /><br />
+            <form action="{{ salvar }}" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nome do Curso" name="nome"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
+                </div>
+            </form>
 
     </div>
     </div>

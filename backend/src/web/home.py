@@ -41,3 +41,9 @@ def galeria(_write_tmpl):
 
 def menu(_write_tmpl):
     _write_tmpl('/templates/home.html')
+
+def curso(_write_tmpl):
+    _write_tmpl('/templates/curso.html')
+
+def detalhe(_write_tmpl):
+    _write_tmpl('/templates/curso_detalhe.html')

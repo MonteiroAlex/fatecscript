@@ -2,6 +2,7 @@ from __future__ import absolute_import, unicode_literals
 from google.appengine.ext import ndb
 import json
 
+
 class Material(ndb.Model):
     nome = ndb.StringProperty()
     descricao = ndb.StringProperty()
