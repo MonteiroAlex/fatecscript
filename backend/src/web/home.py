@@ -47,3 +47,6 @@ def curso(_write_tmpl):
 
 def detalhe(_write_tmpl):
     _write_tmpl('/templates/curso_detalhe.html')
+
+def livro(_write_tmpl):
+    _write_tmpl('/templates/livro.html')
