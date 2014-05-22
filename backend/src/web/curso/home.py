@@ -1,7 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 from curso.model import Curso
 from tekton import router
-from curso.crud import salvar, detalhar
+from web.curso.crud import salvar, detalhar
 
 
 def index(_write_tmpl, _usuario_corrente):

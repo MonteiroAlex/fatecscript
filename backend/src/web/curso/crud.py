@@ -4,7 +4,7 @@ from tekton import router
 
 
 def salvar(_handler,_usuario_corrente, nome, descricao):
-    from curso.home import index
+    from web.curso.home import index
 
     curso = Curso(nome=nome, descricao=descricao,
                   dono_key=_usuario_corrente.key)
@@ -16,3 +16,8 @@ def salvar(_handler,_usuario_corrente, nome, descricao):
 def detalhar(_write_tmpl, curso_id):
     curso = Curso.get_by_id(int(curso_id))
     _write_tmpl('curso_detalhe.html', {'curso': curso})
+
+
+
+
+
