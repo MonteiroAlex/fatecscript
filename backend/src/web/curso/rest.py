@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import, unicode_literals
 import json
-
+from tekton import router
 from curso.model import Curso
 
 
@@ -22,3 +22,17 @@ def salvar_curso(_resp, _usuario_logado, nome, descricao):
     key = curso.put()
     json_str = json.dumps({'id': key.id()})
     _resp.write(json_str)
+
+
+def editar(_resp, id, nome):
+
+    curso = Curso._get_by_id(id)
+    curso.nome = nome
+    curso.put()
+
+
+
+
+def remove(_resp,id):
+    curso = Curso._get_by_id(id)
+    curso.key.delete()

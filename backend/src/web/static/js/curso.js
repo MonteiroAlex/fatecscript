@@ -9,13 +9,17 @@ var myApp = angular.module('myApp', [], function ($interpolateProvider) {
          $scope.listaDeCursos = lista;
      });
 
-     $scope.editarCurso = function (curso) {
-         curso.mostrandoInterfaceEdicao = false;
-     };
 
+
+     $scope.editarCurso = function (curso) {
+        curso.mostrandoInterfaceEdicao = false;
+
+        $http.post('/curso/rest/editar', {"id":curso.id,"nome":curso.nome})
+     };
 
      $scope.deletarCurso = function (curso, index) {
          $scope.listaDeCursos.splice(index, 1);
+          $http.post('/curso/rest/remove', {"id": curso.id})
 
      };
 
