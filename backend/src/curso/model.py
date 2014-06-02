@@ -7,7 +7,7 @@ from usuario.model import Usuario
 
 class Curso(ndb.Model):
     criacao=ndb.DateTimeProperty(auto_now_add=True)
-    descricao=ndb.StringProperty(default='Sem descrição')
+    descricao=ndb.StringProperty(required=True)
     nome=ndb.StringProperty(required=True)
     dono_key=ndb.KeyProperty(Usuario)
 

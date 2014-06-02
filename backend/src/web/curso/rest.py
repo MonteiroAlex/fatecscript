@@ -10,7 +10,7 @@ from curso.model import Curso
 def listar_cursos(_resp, _usuario_logado):
     query = Curso.query_encontrar_cursos_de_usuario(_usuario_logado.key)
     cursos = query.fetch()
-    cursos_dct = [{'id': c.key.id(), 'nome': c.nome} for c in cursos]
+    cursos_dct = [{'id': c.key.id(), 'nome': c.nome, 'descricao': c.descricao} for c in cursos]
     json_str = json.dumps(cursos_dct)
     _resp.write(json_str)
 
@@ -24,10 +24,11 @@ def salvar_curso(_resp, _usuario_logado, nome, descricao):
     _resp.write(json_str)
 
 
-def editar(_resp, id, nome):
+def editar(_resp, id, nome,descricao):
 
     curso = Curso._get_by_id(id)
     curso.nome = nome
+    curso.descricao = descricao
     curso.put()
 
 

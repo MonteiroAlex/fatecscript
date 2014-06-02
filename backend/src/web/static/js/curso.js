@@ -14,7 +14,7 @@ var myApp = angular.module('myApp', [], function ($interpolateProvider) {
      $scope.editarCurso = function (curso) {
         curso.mostrandoInterfaceEdicao = false;
 
-        $http.post('/curso/rest/editar', {"id":curso.id,"nome":curso.nome})
+        $http.post('/curso/rest/editar', {"id":curso.id,"nome":curso.nome, "descricao":curso.descricao})
      };
 
      $scope.deletarCurso = function (curso, index) {
